@@ -13,8 +13,13 @@
     /* company name banner */
     .brand-banner{padding:35px 15px;text-align:center;background:#fff}
     .brand-banner h1{font-size:2.5rem;font-weight:800;letter-spacing:1px;color:#111}
-    body.dark-mode .brand-banner{background:#121212}
-    body.dark-mode .brand-banner h1{color:#e4e4e4 !important}  /* <— force light text */
+
+    /* --- DARK-MODE banner overrides --- */
+    body.dark-mode .brand-banner{background:#000}
+    body.dark-mode .brand-banner h1{
+      color:#fafafa !important;                 /* bright text */
+      text-shadow:0 0 6px rgba(255,255,255,.35) /* soft glow */
+    }
 
     /* navbar */
     nav{position:sticky;top:0;z-index:1000;display:flex;justify-content:center;align-items:center;
@@ -60,7 +65,7 @@
     #scrollTopBtn{position:fixed;bottom:30px;right:30px;display:none;z-index:1001;font-size:20px;
                   border:none;border-radius:50%;padding:10px 15px;background:#007bff;color:#fff;cursor:pointer}
 
-    /* dark-mode base overrides */
+    /* dark-mode base */
     body.dark-mode{background:#121212;color:#e4e4e4}
     body.dark-mode nav{background:#000}
     body.dark-mode #scrollTopBtn,
@@ -88,11 +93,11 @@
   <!-- ---------- HERO / SLIDESHOW ---------- -->
   <header class="slideshow">
     <div class="slides">
-      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide1.png?raw=true" alt="slide1" class="active">
+      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide1.png?raw=true" class="active" alt="slide1">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide2.png?raw=true" alt="slide2">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide3.png?raw=true" alt="slide3">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide4.png?raw=true" alt="slide4">
-      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide5.png?raw=true"  alt="slide5">
+      <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide5.png?raw=true" alt="slide5">
     </div>
     <div class="dots"></div>
   </header>
@@ -104,7 +109,7 @@
       <img src="team-collaboration.gif" alt="Working together GIF">
       <div class="about-text">
         <p>At <strong>VersaFlex</strong> we are a team of passionate professionals dedicated to making a difference in the world...</p>
-        <!-- further paragraphs unchanged -->
+        <!-- more paragraphs -->
       </div>
     </div>
   </section>
@@ -127,9 +132,7 @@
   </section>
 
   <!-- ---------- FOOTER ---------- -->
-  <footer style="background:#f1f1f1;padding:25px 15px;text-align:center;font-size:.9rem">
-    © 2025 VERSAFLEX INDIA PRIVATE LIMITED.
-  </footer>
+  <footer style="background:#f1f1f1;padding:25px 15px;text-align:center;font-size:.9rem">© 2025 VERSAFLEX INDIA PRIVATE LIMITED.</footer>
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
@@ -153,8 +156,8 @@
       let idx=0,timer;
       imgs.forEach((_,i)=>{const b=document.createElement('button');if(i===0)b.classList.add('active');b.onclick=()=>show(i,true);dotsBox.appendChild(b);});
       function show(n,manual=false){imgs[idx].classList.remove('active');dotsBox.children[idx].classList.remove('active');idx=n;imgs[idx].classList.add('active');dotsBox.children[idx].classList.add('active');if(manual)reset();}
-      function next(){show((idx+1)%imgs.length);}
-      function reset(){clearInterval(timer);timer=setInterval(next,6000);}
+      function next(){show((idx+1)%imgs.length);} 
+      function reset(){clearInterval(timer);timer=setInterval(next,6000);} 
       show(0);reset();
     })();
   </script>
