@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VERSAFLEX</title>
 
   <style>
@@ -14,7 +14,7 @@
     .brand-banner{padding:35px 15px;text-align:center;background:#fff}
     .brand-banner h1{font-size:2.5rem;font-weight:800;letter-spacing:1px;color:#111}
     body.dark-mode .brand-banner{background:#121212}
-    body.dark-mode .brand-banner h1{color:#e4e4e4}
+    body.dark-mode .brand-banner h1{color:#e4e4e4 !important}  /* <— force light text */
 
     /* navbar */
     nav{position:sticky;top:0;z-index:1000;display:flex;justify-content:center;align-items:center;
@@ -60,7 +60,7 @@
     #scrollTopBtn{position:fixed;bottom:30px;right:30px;display:none;z-index:1001;font-size:20px;
                   border:none;border-radius:50%;padding:10px 15px;background:#007bff;color:#fff;cursor:pointer}
 
-    /* dark-mode overrides */
+    /* dark-mode base overrides */
     body.dark-mode{background:#121212;color:#e4e4e4}
     body.dark-mode nav{background:#000}
     body.dark-mode #scrollTopBtn,
@@ -70,12 +70,12 @@
 </head>
 <body>
 
-  <!-- ----------  BRAND BANNER ---------- -->
+  <!-- ---------- BRAND BANNER ---------- -->
   <div class="brand-banner">
     <h1>VERSAFLEX</h1>
   </div>
 
-  <!-- ----------  NAVBAR ---------- -->
+  <!-- ---------- NAVBAR ---------- -->
   <nav>
     <ul>
       <li><a href="#about">About Us</a></li>
@@ -85,7 +85,7 @@
     <button id="darkModeToggle" aria-pressed="false">Toggle Dark Mode</button>
   </nav>
 
-  <!-- ----------  HERO / SLIDESHOW  ---------- -->
+  <!-- ---------- HERO / SLIDESHOW ---------- -->
   <header class="slideshow">
     <div class="slides">
       <img src="https://github.com/atlascortigan9703/versa.github.io/blob/main/slide1.png?raw=true" alt="slide1" class="active">
@@ -97,25 +97,25 @@
     <div class="dots"></div>
   </header>
 
-  <!-- ----------  ABOUT US ---------- -->
+  <!-- ---------- ABOUT US ---------- -->
   <section id="about">
     <h2>About Us</h2>
     <div class="about-container">
-      <img src="team-collaboration.gif" alt="Working together GIF" />
+      <img src="team-collaboration.gif" alt="Working together GIF">
       <div class="about-text">
-        <p>At <strong>VersaFlex</strong> we are a team of passionate professionals dedicated to making a difference in the world. Founded as a startup, we have grown into a dynamic force in the industry, redefining what's possible every day...</p>
-        <!-- remaining paragraphs unchanged -->
+        <p>At <strong>VersaFlex</strong> we are a team of passionate professionals dedicated to making a difference in the world...</p>
+        <!-- further paragraphs unchanged -->
       </div>
     </div>
   </section>
 
-  <!-- ----------  SERVICES ---------- -->
+  <!-- ---------- SERVICES ---------- -->
   <section id="services">
     <h2>Our Services</h2>
-    <!-- service cards unchanged -->
+    <!-- service cards here -->
   </section>
 
-  <!-- ----------  CONTACT INFO ---------- -->
+  <!-- ---------- CONTACT ---------- -->
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-box">
@@ -126,14 +126,13 @@
     </div>
   </section>
 
-  <!-- ----------  FOOTER ---------- -->
+  <!-- ---------- FOOTER ---------- -->
   <footer style="background:#f1f1f1;padding:25px 15px;text-align:center;font-size:.9rem">
     © 2025 VERSAFLEX INDIA PRIVATE LIMITED.
   </footer>
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
-  <!-- ----------  JS  ---------- -->
   <script>
     /* dark-mode toggle */
     const toggle=document.getElementById('darkModeToggle');
